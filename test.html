@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<div class="test1">
+<input type="checkbox" name="check1" value="2">
+<input type="checkbox" name="check2" value="3">	
+<input type="checkbox" name="check3" value="4">
+</div>
+<div class="test2">
+	
+</div>
+
+<script type="text/javascript">
+
+jQuery( document ).ready(function($) {
+
+	var databind1 = '<ul class="databindhtml databind1"><li><input type="checkbox" name="a"></li><li><input type="checkbox" name="b"></li><li><input type="checkbox" name="c"></li><li><input type="checkbox" name="d"></li><li><input type="checkbox" name="e"></li><li><input type="checkbox" name="f"></li></ul>';
+	//var databind2 = '<ul class="databindhtml databind2"><li><input type="checkbox" name="a"></li><li><input type="checkbox" name="b"></li><li><input type="checkbox" name="c"></li><li><input type="checkbox" name="d"></li><li><input type="checkbox" name="e"></li><li><input type="checkbox" name="f"></li></ul>';
+	var databind3 = '<div class="databindhtml databind3"><seclect name="x"><option value="1">test1</option><option value="1">test2</option></select><seclect name="y"><option value="1">test1</option><option value="1">test2</option></select></div>';
+
+     $('input[name="check1"]').click(function(){
+            if($(this).prop("checked") == true){
+            	$(".databindhtml").empty();
+                $(".test2").append(databind1);
+            }
+            else if($(this).prop("checked") == false){
+                 $(".databindhtml").empty();
+            }
+        });
+
+     $('input[name="check2"]').click(function(){
+            if($(this).prop("checked") == true){
+            	$(".databindhtml").empty();
+                $(".test2").append(databind1);
+            }
+            else if($(this).prop("checked") == false){
+                $(".databindhtml").empty();
+            }
+        });
+
+     $('input[name="check3"]').click(function(){
+            if($(this).prop("checked") == true){
+            	$(".databindhtml").empty();
+                $(".test2").append(databind3);
+            }
+            else if($(this).prop("checked") == false){
+                $(".databindhtml").empty();
+            }
+        });
+
+});
+
+</script>
+
+
+</body>
+</html>
